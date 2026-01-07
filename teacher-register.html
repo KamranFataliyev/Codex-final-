@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/teacher-register.css">
+  <title>Müəllim Qeydiyyatı | CodeX</title>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="/index.html" class="logo">
+      <span class="logo-icon">&lt;/&gt;</span>
+      <span>CodeX</span>
+    </a>
+    <div class="auth-buttons">
+      <a href="login.html" class="btn-login">Daxil ol</a>
+      <a href="register.html" class="btn-register">Qeydiyyat</a>
+    </div>
+  </nav>
+
+  <section class="register-section">
+    <div class="register-container">
+      <div class="register-header">
+        <div class="badge">👨‍🏫 Müəllim ol</div>
+        <h1>Müəllim <span class="highlight">Qeydiyyatı</span></h1>
+        <p>Biliklərini paylaş, gəlir qazan və icmaya kömək et</p>
+      </div>
+
+      <form id="teacherForm" class="register-form">
+        <div class="form-section">
+          <h3>Şəxsi Məlumatlar</h3>
+          
+          <div class="form-group">
+            <label for="name">Ad Soyad *</label>
+            <input type="text" id="name" name="name" placeholder="Məs: Orxan Mirzəzadə" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="imageUrl">Profil Şəkli URL *</label>
+              <input type="url" id="imageUrl" name="imageUrl" placeholder="https://example.com/photo.jpg" required>
+              <small>Şəkil linkini daxil edin</small>
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefon *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+994 50 123 45 67" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cv">CV Yüklə</label>
+            <div class="file-upload">
+              <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+              <div class="file-upload-label">
+                <span class="file-icon">📄</span>
+                <span class="file-text">PDF və ya DOC fayl seçin</span>
+              </div>
+              <span class="file-name" id="fileName"></span>
+            </div>
+            <small>Maksimum 5MB (PDF, DOC, DOCX)</small>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="profession">Peşə *</label>
+              <select id="profession" name="profession" required>
+                <option value="">Seçin...</option>
+                <option value="Frontend Developer">Frontend Developer</option>
+                <option value="Backend Developer">Backend Developer</option>
+                <option value="FullStack Developer">FullStack Developer</option>
+                <option value="Mobile Developer">Mobile Developer</option>
+                <option value="UI/UX Designer">UI/UX Designer</option>
+                <option value="DevOps Engineer">DevOps Engineer</option>
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="QA Engineer">QA Engineer</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="experience">Təcrübə (il) *</label>
+              <input type="number" id="experience" name="experience" min="0" max="50" placeholder="3" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Bacarıqlar</h3>
+          
+          <div class="form-row three">
+            <div class="form-group">
+              <label for="knowledge1">Bacarıq 1 *</label>
+              <input type="text" id="knowledge1" name="knowledge1" placeholder="React" required>
+            </div>
+            <div class="form-group">
+              <label for="knowledge2">Bacarıq 2</label>
+              <input type="text" id="knowledge2" name="knowledge2" placeholder="Node.js">
+            </div>
+            <div class="form-group">
+              <label for="knowledge3">Bacarıq 3</label>
+              <input type="text" id="knowledge3" name="knowledge3" placeholder="SQL">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>Qiymət & Əlaqə</h3>
+          
+          <div class="form-group">
+            <label for="price">Saatlıq Qiymət (AZN) *</label>
+            <input type="number" id="price" name="price" min="1" max="500" placeholder="15" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="linkedin">LinkedIn</label>
+              <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/username">
+            </div>
+            <div class="form-group">
+              <label for="github">GitHub</label>
+              <input type="url" id="github" name="github" placeholder="https://github.com/username">
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span class="btn-text">Qeydiyyatdan Keç</span>
+          <span class="btn-loader" style="display:none;">Göndərilir...</span>
+        </button>
+      </form>
+
+      <div id="successMessage" class="success-message" style="display:none;">
+        <div class="success-icon">✓</div>
+        <h2>Qeydiyyat Uğurlu!</h2>
+        <p>Müəllim olaraq qeydiyyatınız tamamlandı.</p>
+        <a href="teachers.html" class="btn-view">Müəllimləri Gör</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/toast.js"></script>
+  <script src="js/teacher-register.js"></script>
+</body>
+</html>

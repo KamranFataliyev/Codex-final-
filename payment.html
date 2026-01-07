@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödəniş - CodeX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/payment.css">
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">&lt;/&gt; CodeX</div>
+            <div class="progress-bar">
+                <div class="progress-step completed">✓ Səbət</div>
+                <div class="progress-step active">💳 Ödəniş</div>
+                <div class="progress-step">🎉 Tamamlandı</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="payment-section">
+                <h2 class="section-title">
+                    Ödəniş Məlumatları
+                </h2>
+
+                <div class="payment-methods">
+                    <div class="method-card active">
+                        <span class="method-icon">💳</span>
+                        <span class="method-name">Kart</span>
+                    </div>
+                    <div class="method-card">
+                        <span class="method-icon">🍎</span>
+                        <span class="method-name">Apple Pay</span>
+                    </div>
+                    <div class="method-card">
+                        <span class="method-icon">🌐</span>
+                        <span class="method-name">PayPal</span>
+                    </div>
+                    <div class="method-card">
+                        <span class="method-icon">₿</span>
+                        <span class="method-name">Crypto</span>
+                    </div>
+                </div>
+
+                <form>
+                    <div class="form-group">
+                        <label class="input-label">Kart Nömrəsi</label>
+                        <div class="input-wrapper">
+                            <input type="text" class="input-field" placeholder="1234 5678 9012 3456" maxlength="19" id="cardNum">
+                            <span class="input-icon">💳</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="input-label">Kart Sahibinin Adı</label>
+                        <input type="text" class="input-field" placeholder="Ad Soyad">
+                    </div>
+
+                    <div class="input-grid">
+                        <div class="form-group">
+                            <label class="input-label">Son İstifadə</label>
+                            <input type="text" class="input-field" placeholder="AA / İİ" maxlength="7">
+                        </div>
+                        <div class="form-group">
+                            <label class="input-label">CVV</label>
+                            <div class="input-wrapper">
+                                <input type="text" class="input-field" placeholder="123" maxlength="3">
+                                <span class="input-icon">🔒</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-visual">
+                        <div class="card-chip"></div>
+                        <div class="card-number" id="cardDisplay">•••• •••• •••• ••••</div>
+                        <div class="card-details">
+                            <span>AA/İİ</span>
+                            <span>CVV •••</span>
+                        </div>
+                    </div>
+
+                    <div class="ai-suggestion">
+                        <div>
+                            <strong>Tövsiyə:</strong> Bu kartla 5% cashback əldə edə bilərsiniz. Təklif 2 saat ərzində keçərlidir.
+                        </div>
+                    </div>
+                </form>
+
+                <div class="security-features">
+                    <div style="font-size: 0.9rem; font-weight: 600; color: #9ca3af; margin-bottom: 5px;">Qorunma</div>
+                    <div class="security-items">
+                        <div class="security-item">
+                            <span class="security-icon">🛡️</span>
+                            <div class="security-label">256-bit SSL</div>
+                        </div>
+                        <div class="security-item">
+                            <span class="security-icon">🤖</span>
+                            <div class="security-label">Fırıldaqdan Qoruma</div>
+                        </div>
+                        <div class="security-item">
+                            <span class="security-icon">✓</span>
+                            <div class="security-label">PCI Sertifikat</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <div class="order-card">
+                    <h3 class="section-title">Sifariş Xülasəsi</h3>
+
+                    <div class="course-item">
+                        <div class="course-thumb">🚀</div>
+                        <div class="course-details">
+                            <h4>Full Stack Development</h4>
+                            <div class="course-meta">Node.js • React • MongoDB</div>
+                            <div class="course-price">₼89.99</div>
+                        </div>
+                    </div>
+
+                    <div class="promo-input">
+                        <input type="text" class="input-field" placeholder="Promo kod">
+                        <button type="button" class="promo-btn">Tətbiq et</button>
+                    </div>
+
+                    <div class="price-breakdown">
+                        <div class="price-row">
+                            <span>Ara cəm</span>
+                            <span>₼89.99</span>
+                        </div>
+                        <div class="price-row discount">
+                            <span>Endirim</span>
+                            <span>-₼10.00</span>
+                        </div>
+                        <div class="price-row">
+                            <span>ƏDV (18%)</span>
+                            <span>₼14.40</span>
+                        </div>
+                        <div class="price-row total">
+                            <span>Yekun</span>
+                            <span>₼94.39</span>
+                        </div>
+                    </div>
+
+                    <button class="checkout-btn">
+                        <span>Ödənişi tamamla</span>
+                        <span>→</span>
+                    </button>
+
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Ömürlük giriş</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>Tamamlanma sertifikatı</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>30 günlük pul qaytarma</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span>
+                            <span>24/7 dəstək</span>
+                        </div>
+                    </div>
+
+                    <div class="trust-badges">
+                        <span class="trust-badge">🔒</span>
+                        <span class="trust-badge">✓</span>
+                        <span class="trust-badge">⭐</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/payment.js"></script>
+</body>
+</html>
